@@ -196,10 +196,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 776399094}
     m_Modifications:
-    - target: {fileID: 4031104637510490918, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4369993106386166493, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -446,7 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -521,7 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -655,7 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -733,7 +729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -808,7 +804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -883,7 +879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -974,10 +970,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 776399094}
     m_Modifications:
-    - target: {fileID: 4031104637510490918, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4369993106386166493, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1189,7 +1181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1465,7 +1457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1645,7 +1637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1817,10 +1809,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 776399094}
     m_Modifications:
-    - target: {fileID: 4031104637510490918, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4369993106386166493, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2227,10 +2215,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: afac76672609f6748a97c8eb442bdf44, type: 3}
-    - target: {fileID: 4031104637510490918, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4369993106386166493, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2357,10 +2341,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: afac76672609f6748a97c8eb442bdf44, type: 3}
-    - target: {fileID: 4031104637510490918, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4369993106386166493, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2625,10 +2605,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: afac76672609f6748a97c8eb442bdf44, type: 3}
-    - target: {fileID: 4031104637510490918, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4369993106386166493, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2952,10 +2928,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: afac76672609f6748a97c8eb442bdf44, type: 3}
-    - target: {fileID: 4031104637510490918, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4369993106386166493, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3132,7 +3104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3223,10 +3195,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 776399094}
     m_Modifications:
-    - target: {fileID: 4031104637510490918, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4369993106386166493, guid: e7ac6e11040c8254d940eff07bdb4350, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

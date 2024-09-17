@@ -16,7 +16,6 @@ namespace RPG.Combat
         private Animator _animator;
         private Mover _mover;
         private Health _target;
-        private Renderer _renderer;
 
         [Header("Weapons")]
         [SerializeField] private WeaponConfig _defaultWeapon;
@@ -34,7 +33,6 @@ namespace RPG.Combat
 
         private void Awake()
         {
-            _renderer = GetComponent<Renderer>();
             _animator = GetComponent<Animator>();
             _mover = GetComponent<Mover>();
             _currentWeaponConfig = _defaultWeapon;
@@ -85,9 +83,9 @@ namespace RPG.Combat
         {
             transform.LookAt(_target.transform);
 
-            if (_timeSinceLastAttack > _timeBetweenAttacks && _renderer.isVisible)
+            if (_timeSinceLastAttack > _timeBetweenAttacks)
             {
-                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Hit() Animation Event
+                // Запускает Hit() Animation Event
                 TriggerAttack();
                 _timeSinceLastAttack = 0;
             }

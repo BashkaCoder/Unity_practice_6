@@ -35,6 +35,7 @@ namespace RPG.SceneManagement
         public static void Delete()
         {
             SavingSystem.Delete(DefaultSaveFile);
+            print("Delete Save File");
         }
 
         public static bool SaveFileExist() =>

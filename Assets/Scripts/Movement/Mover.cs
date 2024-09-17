@@ -14,8 +14,6 @@ namespace RPG.Movement
         private Health _health;
         private Animator _animator;
 
-        private Renderer _renderer;
-        
         private const float MaxNavPathLength = 30f;
 
         private void Awake()
@@ -23,16 +21,12 @@ namespace RPG.Movement
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _health = GetComponent<Health>();
             _animator = GetComponent<Animator>();
-            _renderer = GetComponent<Renderer>();
         }
 
         private void Update()
         {
             _navMeshAgent.enabled = !_health.IsDead;
-            if (_renderer.isVisible)
-            {
-                UpdateAnimator();
-            }
+            UpdateAnimator();
         }
 
         private void UpdateAnimator()

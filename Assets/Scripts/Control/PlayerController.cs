@@ -1,8 +1,6 @@
-using System;
 using RPG.Combat;
 using RPG.Movement;
 using RPG.Stats;
-using RPG.Utils;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
@@ -11,19 +9,16 @@ namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
-        private static Camera _camera;
-        
         [SerializeField] private CursorMapping[] _cursorMappings;
         private Mover _mover;
+        private Fighter _fighter;
         private Health _health;
-        
+
+        /// <summary> ������, � �������� �������� ����� ������� ������ � ��������� �����.</summary>
         private const float SphereCastRadius = 1f;
         private const float MaxNavMeshProjectionDistance = 1f;
-        private const int MaxSphereCastHits = 10; // Максимальное количество результатов, которые может вернуть SphereCastNonAlloc
 
         private bool IsPlayerDead => _health.IsDead;
-
-        private RaycastHit[] _sphereCastHits = new RaycastHit[MaxSphereCastHits]; // Буфер для результатов SphereCastNonAlloc
 
         [System.Serializable]
         private struct CursorMapping
@@ -37,7 +32,7 @@ namespace RPG.Control
         {
             _health = GetComponent<Health>();
             _mover = GetComponent<Mover>();
-            _camera = Camera.main;
+            _fighter = GetComponent<Fighter>();
         }
 
         private void Update()
@@ -67,10 +62,9 @@ namespace RPG.Control
 
         private bool InteractWithComponent()
         {
-            int hitCount = SphereCastAllSorted(); // Используем обновленный метод
-            for (int i = 0; i < hitCount; i++)
+            RaycastHit[] hits = SphereCastAllSorted();
+            foreach (RaycastHit hit in hits)
             {
-                RaycastHit hit = _sphereCastHits[i];
                 var raycastables = hit.transform.GetComponents<IRaycastable>();
                 foreach (var raycastable in raycastables)
                 {
@@ -84,14 +78,18 @@ namespace RPG.Control
             return false;
         }
 
-        private int SphereCastAllSorted()
+        private RaycastHit[] SphereCastAllSorted()
         {
-            int hitCount = Physics.SphereCastNonAlloc(GetMouseRay(), SphereCastRadius, _sphereCastHits);
+            RaycastHit[] hits = Physics.SphereCastAll(GetMouseRay(), SphereCastRadius);
 
-            // Сортируем результаты по дистанции с использованием IComparer
-            Array.Sort(_sphereCastHits, 0, hitCount, new RaycastHitDistanceComparer());
-
-            return hitCount;
+            // Sort the hits by distance
+            var distances = new float[hits.Length];
+            for (int i = 0; i < hits.Length; i++)
+            {
+                distances[i] = hits[i].distance;
+            }
+            System.Array.Sort(distances, hits);
+            return hits;
         }
 
         private bool InteractWithMovement()
@@ -146,6 +144,6 @@ namespace RPG.Control
         }
         #endregion
 
-        private static Ray GetMouseRay() => _camera.ScreenPointToRay(Input.mousePosition);
+        private static Ray GetMouseRay() => Camera.main.ScreenPointToRay(Input.mousePosition);
     }
 }

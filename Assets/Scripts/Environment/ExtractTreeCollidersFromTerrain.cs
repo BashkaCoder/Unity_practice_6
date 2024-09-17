@@ -10,17 +10,20 @@ namespace RPG.Environment
         [ContextMenu("Extract")]
         public void Extract()
         {
+            Debug.Log("ExtractTreeCollidersFromTerrain::Extract");
             var terrain = GetComponent<Terrain>();
 
             //Delete all previously created colliders first
             DeleteAll();
-            
+
+            Debug.Log("Tree prototypes count: " + terrain.terrainData.treePrototypes.Length);
             for (int i = 0; i < terrain.terrainData.treePrototypes.Length; i++)
             {
                 TreePrototype tree = terrain.terrainData.treePrototypes[i];
 
                 //Get all instances matching the prefab index
                 TreeInstance[] instances = terrain.terrainData.treeInstances.Where(x => x.prototypeIndex == i).ToArray();
+                Debug.Log($"Tree prototypes[{i}] instance count: {instances.Length}");
 
                 for (int j = 0; j < instances.Length; j++)
                 {
@@ -30,6 +33,7 @@ namespace RPG.Environment
                     NavMeshObstacle nav_mesh_obstacle = tree.prefab.GetComponent<NavMeshObstacle>();
                     if (!nav_mesh_obstacle)
                     {
+                        Debug.LogWarning("Tree with prototype[" + i + "] instance[" + j + "] did not have a NavMeshObstacle component, skipping!");
                         continue;
                     }
 

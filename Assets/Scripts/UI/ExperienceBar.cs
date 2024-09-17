@@ -39,7 +39,7 @@ namespace RPG.UI
 
         private void SetBarText(float currentValue, float maxValue)
         {
-            _experienceText.text = $"XP {currentValue} / {maxValue}";
+            _experienceText.text = $"XP  {currentValue} / {maxValue}";
         }
 
         private void SetBarImageFill(float newValue, bool instantly = false)
@@ -58,10 +58,10 @@ namespace RPG.UI
         private static IEnumerator FillBarSmoothlyCoroutine(Image bar, float value)
         {
             float elapsedTime = 0;
-            const float fillingRate = 0.5f;
-            while (bar.fillAmount <= value)
+            const float FillingRate = 0.5f;
+            while (bar.fillAmount != value)
             {
-                elapsedTime += Time.deltaTime * fillingRate;
+                elapsedTime += Time.deltaTime * FillingRate;
                 bar.fillAmount = Mathf.Lerp(bar.fillAmount, value, elapsedTime);
                 yield return null;
             }

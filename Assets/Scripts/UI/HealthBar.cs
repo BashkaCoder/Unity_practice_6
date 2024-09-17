@@ -63,10 +63,10 @@ namespace RPG.UI
             Image firstFillBar = _previousValue > newValue ? _foregroundFill : _backgroundFill;
             Image secondFillBar = _previousValue > newValue ? _backgroundFill : _foregroundFill;
 
-            // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+            // Первый бар заполняется мгновенно.
             firstFillBar.fillAmount = newValue;
 
-            // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.
+            // Второй бар заполняется плавно.
             if (instantly)
             {
                 secondFillBar.fillAmount = newValue;
@@ -83,10 +83,10 @@ namespace RPG.UI
         private static IEnumerator FillBarSmoothlyCoroutine(Image bar, float value)
         {
             float elapsedTime = 0;
-            const float fillingRate = 0.5f;
-            while (bar.fillAmount <= value)
+            const float FillingRate = 0.5f;
+            while (bar.fillAmount != value)
             {
-                elapsedTime += Time.deltaTime * fillingRate;
+                elapsedTime += Time.deltaTime * FillingRate;
                 bar.fillAmount = Mathf.Lerp(bar.fillAmount, value, elapsedTime);
                 yield return null;
             }
