@@ -12,11 +12,11 @@ namespace RPG.Control
     {
         #region Fields and Properties
         [Header("Attack Behaviour")]
-        [SerializeField, Range(1f, 100f), Tooltip("Радиус обнаружения врага.")]
+        [SerializeField, Range(1f, 100f), Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.")]
         private float _detectionRadius = 5f;
         [SerializeField] private float _allowedDistanceDeparture = 30f;
         [SerializeField] private float _aggroCooldownTime = 5f;
-        [SerializeField, Tooltip("Радиус крика, который привлекает внимание мобов вокруг.")] private float _shoutRadius = 5f;
+        [SerializeField, Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.")] private float _shoutRadius = 5f;
 
         private Fighter _fighter;
         private GameObject _player;
@@ -43,6 +43,7 @@ namespace RPG.Control
         }
 
         private Health _health;
+        private RaycastHit[] _hits = new RaycastHit[10];
         #endregion
 
         private void Awake()
@@ -102,10 +103,11 @@ namespace RPG.Control
 
         private void AggrevateNearbyEnemies()
         {
-            RaycastHit[] hits = Physics.SphereCastAll(transform.position, _shoutRadius, Vector3.up, 0);
-            foreach (RaycastHit hit in hits)
+            //RaycastHit[] hits = Physics.SphereCastAll(transform.position, _shoutRadius, Vector3.up, 0);
+            int hitCount = Physics.SphereCastNonAlloc(transform.position, _shoutRadius, Vector3.up, _hits, 0);
+            for (int i = 0; i < hitCount; i++)
             {
-                var ai = hit.collider.GetComponent<AIController>();
+                var ai = _hits[i].collider.GetComponent<AIController>();
                 if (ai == null) continue;
 
                 ai.Aggrevate();

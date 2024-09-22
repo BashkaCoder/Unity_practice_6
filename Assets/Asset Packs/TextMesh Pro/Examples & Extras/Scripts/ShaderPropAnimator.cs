@@ -21,7 +21,7 @@ namespace TMPro.Examples
             m_Renderer = GetComponent<Renderer>();
 
             // Cache a reference to object's material and create an instance by doing so.
-            m_Material = m_Renderer.material;
+            m_Material = m_Renderer.sharedMaterial;
         }
 
         void Start()

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class HideOnRaycast : MonoBehaviour
 {
-    private Camera _mainCamera; // Ссылка на основную камеру
-    private LayerMask _layerMask; // Маска слоев, на которые будет проверяться Raycast
+    private Camera _mainCamera; // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    private LayerMask _layerMask; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Raycast
     private Transform _player;
     private static List<GameObject> _hiddenObjects = new();
     private const float SphereCastRadius = 1f;
+    private const int MaxHits = 10;
+    private RaycastHit[] _hits = new RaycastHit[MaxHits];
 
     private void Start()
     {
@@ -31,7 +33,6 @@ public class HideOnRaycast : MonoBehaviour
         foreach (RaycastHit hit in hits)
         {
             if (hit.collider.gameObject.CompareTag("Player")) break;
-            print(hit.collider.name);
 
             if (!_hiddenObjects.Contains(hit.collider.gameObject))
             {

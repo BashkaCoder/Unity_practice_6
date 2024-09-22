@@ -17,6 +17,7 @@ namespace RPG.Movement
         private Renderer _renderer;
         
         private const float MaxNavPathLength = 30f;
+        private Vector3[] _pathCorners = new Vector3[10];
 
         private void Awake()
         {
@@ -66,10 +67,12 @@ namespace RPG.Movement
         private float GetPathLength(NavMeshPath path)
         {
             float total = 0;
-            if (path.corners.Length < 2) return total;
-            for (int i = 0; i < path.corners.Length - 1; i++)
+            int cornerCount = path.GetCornersNonAlloc(_pathCorners);
+            
+            if (cornerCount < 2) return total;
+            for (int i = 0; i < cornerCount - 1; i++)
             {
-                total += Vector3.Distance(path.corners[i], path.corners[i + 1]);
+                total += Vector3.Distance(_pathCorners[i], _pathCorners[i + 1]);
             }
             return total;
         }

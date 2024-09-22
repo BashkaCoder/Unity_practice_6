@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityStandardAssets.Water
@@ -6,21 +7,21 @@ namespace UnityStandardAssets.Water
     public class MeshContainer
     {
         public Mesh mesh;
-        public Vector3[] vertices;
+        public List<Vector3> vertices;
         public Vector3[] normals;
 
 
         public MeshContainer(Mesh m)
         {
             mesh = m;
-            vertices = m.vertices;
+            m.GetVertices(vertices);
             normals = m.normals;
         }
 
 
         public void Update()
         {
-            mesh.vertices = vertices;
+            mesh.SetVertices(vertices);
             mesh.normals = normals;
         }
     }
