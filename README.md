@@ -1,2 +1,2 @@
-# Unity_practice_6
-blah-blah
+# Optimization 🫡 in Unity
+Ветка оптимизированной версии игры
