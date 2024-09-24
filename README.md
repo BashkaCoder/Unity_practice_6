@@ -42,6 +42,7 @@
 - Project Settings/Physics: Свел матрицу коллизий до необходимого минимума
 - Изменил Fixed Timestep до 0.06(Так как таргет - 60фпс)
 - По предложениям [ProjectAuditor](https://github.com/Unity-Technologies/ProjectAuditor) изменил немного код и настройки импорта ассетов(модели, аудио, текстуры)
+- Изменил Scripting Backend: c Mono на IL2CPP
 
 ## В чем я преисполнился
 - #### Оптимизация размера:
