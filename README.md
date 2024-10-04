@@ -2,8 +2,8 @@
 ## Task:
 Оптимизировать существующий проект. В качестве проекта выбран пет-проект RPG игры. 
 
-Версия игры до оптимизации находится в ветке [Old](https://www.google.ru/?hl=ru).
-Оптимизированная версия игры находится в ветке [New](https://www.google.ru/?hl=ru)
+Версия игры до оптимизации находится в ветке [Old](https://github.com/BashkaCoder/Unity_practice_6/tree/Old).
+Оптимизированная версия игры находится в ветке [New](https://github.com/BashkaCoder/Unity_practice_6/tree/New)
 
 
 ## Выполнение:
